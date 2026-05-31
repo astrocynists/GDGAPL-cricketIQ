@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #060913;
+    color: #f3f4f6;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(8, 12, 20, 0.5);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(13, 20, 35, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-card {
+  background: rgba(20, 30, 55, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(24, 37, 68, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.glass-input {
+  background: rgba(8, 14, 28, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f3f4f6;
+  transition: all 0.2s;
+}
+
+.glass-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+/* Glow effects */
+.ambient-glow-rcb {
+  position: relative;
+}
+.ambient-glow-rcb::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: radial-gradient(circle, rgba(201, 29, 46, 0.15) 0%, rgba(209, 162, 44, 0.05) 50%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(20px);
+}
+
+.ambient-glow-gt {
+  position: relative;
+}
+.ambient-glow-gt::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: radial-gradient(circle, rgba(11, 28, 51, 0.4) 0%, rgba(217, 180, 74, 0.08) 50%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(20px);
+}
+
+/* Recharts override */
+.recharts-default-tooltip {
+  background-color: rgba(13, 20, 35, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  backdrop-filter: blur(12px);
+  color: #f3f4f6 !important;
+}
+
+/* Text highlight gradient */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #F3CF6D 0%, #D1A22C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-rcb {
+  background: linear-gradient(135deg, #FF6B7A 0%, #C91D2E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
